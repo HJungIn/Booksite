@@ -64,7 +64,7 @@
 
 
 		<div class="container">
-			<h3>REST api를 이용한 SDK</h3>
+			
 			<a id="custom-login-btn"
 				href="">
 				<img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300" />
