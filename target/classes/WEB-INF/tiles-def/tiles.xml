@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+
+  <definition name="base" template="/WEB-INF/templates/layout.jsp"> <!--하나의 페이지 -->
+    <put-attribute name="title" value="Booksite homepage" />
+    <put-attribute name="menu" value="/WEB-INF/templates/menu.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/templates/footer.jsp" />
+  </definition>
+  
+  <definition name="home" extends="base">
+    <put-attribute name="title" value="My Booksite homepage" />
+    <put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+  </definition>
+  
+  <definition name="books" extends="base">
+    <put-attribute name="title" value="Books page" />
+    <put-attribute name="body" value="/WEB-INF/views/books.jsp" />
+  </definition>
+  
+  
+  <definition name="admin" extends="base">
+    <put-attribute name="title" value="Administrator page" />
+    <put-attribute name="body" value="/WEB-INF/views/admin.jsp" />
+  </definition>
+ 
+ 
+   <definition name="bookInventory" extends="base">
+    <put-attribute name="title" value="Book Inventory page" />
+    <put-attribute name="body" value="/WEB-INF/views/bookInventory.jsp" />
+  </definition>
+  
+  
+  <!-- 로그인 -->
+   <definition name="login" extends="base">
+    <put-attribute name="title" value="Login page" />
+    <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+  </definition>
+  
+  <!-- 알라딘 -->
+   <definition name="aladin" extends="base">
+    <put-attribute name="title" value="Aladin's search page" />
+    <put-attribute name="body" value="/WEB-INF/views/aladin.jsp" />
+  </definition>
+  
+   <definition name="viewBook" extends="base">
+    <put-attribute name="title" value="Aladin's Book view page" />
+    <put-attribute name="body" value="/WEB-INF/views/viewBook.jsp" />
+  </definition>
+ 
+ <!--  
+  <definition name="addProduct" extends="base">
+    <put-attribute name="title" value="Add Product page" />
+    <put-attribute name="body" value="/WEB-INF/views/addProduct.jsp" />
+  </definition>
+  
+  <definition name="updateProduct" extends="base">
+    <put-attribute name="title" value="Update Product page" />
+    <put-attribute name="body" value="/WEB-INF/views/updateProduct.jsp" />
+  </definition>
+  
+  
+  <definition name="viewProduct" extends="base">
+    <put-attribute name="title" value="View Product page" />
+    <put-attribute name="body" value="/WEB-INF/views/viewProduct.jsp" />
+  </definition>
+  
+  <definition name="registerUser" extends="base">
+    <put-attribute name="title" value="Registeration page" />
+    <put-attribute name="body" value="/WEB-INF/views/registerUser.jsp" />
+  </definition>
+  
+   <definition name="registerUserSuccess" extends="base">
+    <put-attribute name="title" value="Registeration Success page" />
+    <put-attribute name="body" value="/WEB-INF/views/registerUserSuccess.jsp" />
+  </definition>
+  
+  <definition name="cart" extends="base">
+    <put-attribute name="title" value="Cart information page" />
+    <put-attribute name="body" value="/WEB-INF/views/cart.jsp" />
+  </definition> -->
+  
+  
+</tiles-definitions>
