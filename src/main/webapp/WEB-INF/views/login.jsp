@@ -66,7 +66,7 @@
 		<div class="container">
 			<h3>REST api를 이용한 SDK</h3>
 			<a id="custom-login-btn"
-				href="https://kauth.kakao.com/oauth/authorize?client_id=7f1d4035cc185741819896f8acba02d4&redirect_uri=http://localhost:8081/kakaologin&response_type=code">
+				href="">
 				<img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300" />
 			</a>
 			<%--  ${refresh}
