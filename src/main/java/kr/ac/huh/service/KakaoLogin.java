@@ -24,9 +24,9 @@ public class KakaoLogin {
 
 		final List<NameValuePair> postParams = new ArrayList<NameValuePair>();
 		postParams.add(new BasicNameValuePair("grant_type", "authorization_code"));
-		postParams.add(new BasicNameValuePair("client_id", "7f1d4035cc185741819896f8acba02d4")); // REST API KEY
-		postParams.add(new BasicNameValuePair("redirect_uri", "http://localhost:8081/kakaologin")); // ¸®´ÙÀÌ·ºÆ® URI
-		postParams.add(new BasicNameValuePair("code", autorize_code)); // ·Î±×ÀÎ °úÁ¤Áß ¾òÀº code °ª
+		postParams.add(new BasicNameValuePair("client_id", "")); // REST API KEY
+		postParams.add(new BasicNameValuePair("redirect_uri", "http://localhost:8081/kakaologin")); // ë¦¬ë‹¤ì´ë ‰íŠ¸ URI
+		postParams.add(new BasicNameValuePair("code", autorize_code)); // ë¡œê·¸ì¸ ê³¼ì •ì¤‘ ì–»ì€ code ê°’
 
 		final HttpClient client = HttpClientBuilder.create().build();
 		final HttpPost post = new HttpPost(RequestUrl);
@@ -41,7 +41,7 @@ public class KakaoLogin {
 			System.out.println("Post parameters : " + postParams);
 			System.out.println("Response Code : " + responseCode);
 
-			// JSON ÇüÅÂ ¹İÈ¯°ª Ã³¸®
+			// JSON í˜•íƒœ ë°˜í™˜ê°’ ì²˜ë¦¬
 			ObjectMapper mapper = new ObjectMapper();
 			returnNode = mapper.readTree(response.getEntity().getContent());
 
@@ -78,7 +78,7 @@ public class KakaoLogin {
 			System.out.println("\nSending 'POST' request to URL : " + RequestUrl);
 			System.out.println("Response Code : " + responseCode);
 
-			// JSON ÇüÅÂ ¹İÈ¯°ª Ã³¸®
+			// JSON í˜•íƒœ ë°˜í™˜ê°’ ì²˜ë¦¬
 			ObjectMapper mapper = new ObjectMapper();
 			returnNode = mapper.readTree(response.getEntity().getContent());
 
@@ -98,16 +98,16 @@ public class KakaoLogin {
 	public static UserVO changeData(JsonNode userInfo) {
 		UserVO vo = new UserVO();
 
-		vo.setUser_snsId(userInfo.path("id").asText()); // id -> vo ³Ö±â
+		vo.setUser_snsId(userInfo.path("id").asText()); // id -> vo ë„£ê¸°
 
-		if (userInfo.path("kaccount_email_verified").asText().equals("true")) { // ÀÌ¸ŞÀÏ ¹Ş±â Çã¿ë ÇÑ °æ¿ì
-			vo.setUser_email(userInfo.path("kaccount_email").asText()); // email -> vo ³Ö±â
+		if (userInfo.path("kaccount_email_verified").asText().equals("true")) { // ì´ë©”ì¼ ë°›ê¸° í—ˆìš© í•œ ê²½ìš°
+			vo.setUser_email(userInfo.path("kaccount_email").asText()); // email -> vo ë„£ê¸°
 
-		} else { // ÀÌ¸ŞÀÏ °ÅºÎ ÇÒ °æ¿ì ÄÚµå ÃßÈÄ °³¹ß
+		} else { // ì´ë©”ì¼ ê±°ë¶€ í•  ê²½ìš° ì½”ë“œ ì¶”í›„ ê°œë°œ
 
 		}
 
-		JsonNode properties = userInfo.path("properties"); // Ãß°¡Á¤º¸ ¹Ş¾Æ¿À±â
+		JsonNode properties = userInfo.path("properties"); // ì¶”ê°€ì •ë³´ ë°›ì•„ì˜¤ê¸°
 		if (properties.has("nickname"))
 			vo.setUser_name(properties.path("nickname").asText());
 			vo.setUser_profileImagePath(properties.path("profile_image").asText());
